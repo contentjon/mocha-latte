@@ -1,19 +1,33 @@
 mocha-latte
 ===========
 
-This library wraps the Mocha JavaScript testing framework, so it can be used with ClojureScript.
+This library wraps the Mocha JavaScript testing framework,
+so it can be used with ClojureScript.
 
-See the [Mocha Documentation](http://visionmedia.github.io/mocha/) for a general introduction.
+See the [Mocha Documentation](http://visionmedia.github.io/mocha/) for a general
+introduction.
 
-Running Tests
-----------
+```clojure
+[mocha-latte "0.1.0-SNAPSHOT"]
+```
 
-To run tests, simply install mocha with npm.
+Since Mocha itself does not provide an assertion mechanism, you may want to
+use our [ClojureScript wrapper](https://github.com/contentjon/chai-latte) for the
+[Chai](http://chaijs.com/) assertion library to write actual tests.
+
+Installation
+------------
+
+Before running tests, simply install mocha with npm.
 
     npm install mocha -g
 
-Then compile your test code down to JavaScript. It is generally a good idea to let the closure compile
-do only __simple__ optimizations. For an example see the project.clj in this repository.
+Running Tests
+-------------
+
+To run tests, compile your unit test code down to JavaScript.
+It is generally a good idea to let the closure compile do only __simple__ optimizations.
+For an example setup see the project.clj in this repository.
 
 When this is done, execute the test files by running mocha on them.
 
@@ -25,11 +39,11 @@ Example
 ```clojure
 (ns mylib.test.core
   (:require-macros [latte.core :refer (describe it)]))
-  
+
 (describe "Fruits"
 
   (describe "Apples"
-  
+
     (it "is red" []
       ;; assertion code
       )))
@@ -45,11 +59,11 @@ as keyword arguments right before before the Suite or Test Case code.
 (describe "Test Suites"
 
   (describe "with options"
-  
+
     (it "get skipped" [] :skip true
       ;; assertion code
       )
-  
+
     (it "runs only this test case" [] :only true
       ;; assertion code
       )))
@@ -58,7 +72,7 @@ as keyword arguments right before before the Suite or Test Case code.
 Asynchronous Tests
 ------------------
 
-Mocha supports asynchronous tests by supplying a __done__ function to a test case. 
+Mocha supports asynchronous tests by supplying a __done__ function to a test case.
 This is replicated in this library.
 
 ```clojure
