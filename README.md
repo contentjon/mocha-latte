@@ -8,7 +8,7 @@ See the [Mocha Documentation](http://visionmedia.github.io/mocha/) for a general
 introduction.
 
 ```clojure
-[mocha-latte "0.1.0-SNAPSHOT"]
+[mocha-latte "0.1.1"]
 ```
 
 Since Mocha itself does not provide an assertion mechanism, you may want to
