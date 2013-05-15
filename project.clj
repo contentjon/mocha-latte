@@ -7,7 +7,7 @@
                      :comments     "Same license as Mocha"}
   :min-lein-version "2.0.0"
   :plugins          [[lein-cljsbuild "0.3.0"]]
-  :dependencies     [[org.clojure/clojure "1.4.0"]]
+  :profiles         {:dev {:dependencies [[org.clojure/clojure "1.5.1"]]}}
   :cljsbuild
   {:builds
    [{:source-paths ["test/latte" "src"]
