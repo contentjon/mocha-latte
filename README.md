@@ -4,7 +4,7 @@ mocha-latte
 This library wraps the Mocha JavaScript testing framework,
 so it can be used with ClojureScript.
 
-See the [Mocha Documentation](http://visionmedia.github.io/mocha/) for a general
+See the [Mocha Documentation](http://mochajs.org/) for a general
 introduction.
 
 ```clojure
